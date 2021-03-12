@@ -16,7 +16,8 @@ class CreateAccountsTable extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')
-                  ->constrained();
+                  ->constrained()
+                  ->onDelete('cascade');
             $table->string('name');
             $table->enum('type', [
                 'CHECKING',
