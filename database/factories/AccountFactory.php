@@ -24,13 +24,13 @@ class AccountFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'name' => $faker->words(2, true),
-            'type' => $faker->randomElement([
+            'name' => $this->faker->words(2, true),
+            'type' => $this->faker->randomElement([
                 'CHECKING',
                 'SAVINGS',
                 'CREDITCARD',
             ]),
-            'color' => $faker->hexColor(),
+            'color' => $this->faker->hexColor(),
         ];
     }
 

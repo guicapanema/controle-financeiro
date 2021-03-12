@@ -24,8 +24,8 @@ class CategoryFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'name' => $faker->words(2, true),
-            'color' => $faker->hexColor(),
+            'name' => $this->faker->words(2, true),
+            'color' => $this->faker->hexColor(),
         ];
     }
 }
