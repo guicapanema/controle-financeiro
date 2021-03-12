@@ -24,25 +24,21 @@
                     @foreach ($accounts as $account)
                         <div class="p-4 w-full md:w-1/2 lg:w-1/3 -mt-2">
                             <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg sm:rounded-lg transition transform hover:scale-105">
-                                <div class="p-6 bg-white border-b border-gray-200">
+                                <div class="px-6 py-4 bg-white border-l-8 border-b border-gray-200" style="border-left-color: {{ $account->color }}">
 
-                                    <div class="flex items-center space-x-4">
-                                        <div class="flex-shrink-0 h-6 w-6 rounded-full" style="background-color: {{ $account->color }}"></div>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">
+                                            {{ $account->name }}
+                                        </div>
 
-                                        <div>
-                                            <div class="font-semibold text-gray-900">
-                                                {{ $account->name }}
-                                            </div>
-
-                                            <div class="text-sm text-gray-500">
-                                                {{ __('account-types.' . $account->type) }}
-                                            </div>
+                                        <div class="text-sm text-gray-500">
+                                            {{ __('account-types.' . $account->type) }}
                                         </div>
                                     </div>
 
 
                                     <div class="text-2xl text-right mt-2">
-                                        {{ $account->transactions_sum_amount ?? 0 }}
+                                        {{ money($account->transactions_sum_amount ?? 0) }}
                                     </div>
 
                                 </div>
