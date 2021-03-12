@@ -33,4 +33,46 @@ class AccountFactory extends Factory
             'color' => $faker->hexColor(),
         ];
     }
+
+    /**
+     * Indicate that the account is a checking account
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function checking()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'type' => 'CHECKING',
+            ];
+        });
+    }
+
+    /**
+     * Indicate that the account is a savings account
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function savings()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'type' => 'SAVINGS',
+            ];
+        });
+    }
+
+    /**
+     * Indicate that the account is a credit card
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function creditCard()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'type' => 'CREDITCARD',
+            ];
+        });
+    }
 }
