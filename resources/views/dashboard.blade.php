@@ -14,9 +14,23 @@
                 </div>
             </div>
 
-            <h2 class="text-lg text-gray-800 font-semibold leading-tight px-2 mt-6">
-                {{ __('Accounts') }}
-            </h2>
+            <div class="flex items-center space-x-5 px-2 mt-6">
+
+                <h2 class="text-lg text-gray-800 font-semibold leading-tight">
+                    {{ __('Accounts') }}
+                </h2>
+
+                <a href="#" class="flex items-center space-x-1 text-gray-500 hover:text-gray-800 transition">
+
+                    <x-heroicon-o-plus-circle class="w-4 h-4"/>
+
+                    <span class="text-xs uppercase leading-none">
+                        {{ __('Add account') }}
+                    </span>
+
+                </a>
+
+            </div>
 
             @if ($accounts->count())
                 <div class="flex flex-wrap -mx-4">
@@ -53,9 +67,23 @@
                 </div>
             @endif
 
-            <h2 class="text-lg text-gray-800 font-semibold leading-tight px-2 mt-6">
-                {{ __('Categories') }}
-            </h2>
+            <div class="flex items-center space-x-5 px-2 mt-6">
+
+                <h2 class="text-lg text-gray-800 font-semibold leading-tight">
+                    {{ __('Categories') }}
+                </h2>
+
+                <a href="#" class="flex items-center space-x-1 text-gray-500 hover:text-gray-800 transition">
+
+                    <x-heroicon-o-plus-circle class="w-4 h-4"/>
+
+                    <span class="text-xs uppercase leading-none">
+                        {{ __('Add category') }}
+                    </span>
+
+                </a>
+
+            </div>
 
             @if ($categories->count())
                 <div class="flex flex-wrap -mx-4">
