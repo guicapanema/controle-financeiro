@@ -18,11 +18,10 @@
                 {{ __('Accounts') }}
             </h2>
 
-
             @if ($accounts->count())
                 <div class="flex flex-wrap -mx-4">
                     @foreach ($accounts as $account)
-                        <div class="p-4 w-full md:w-1/2 lg:w-1/3 -mt-2">
+                        <div class="p-4 w-full md:w-1/2 lg:w-1/3 -my-2">
                             <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg sm:rounded-lg transition transform hover:scale-105">
                                 <div class="px-6 py-4 bg-white border-l-8 border-b border-gray-200" style="border-left-color: {{ $account->color }}">
 
@@ -50,6 +49,38 @@
                 <div class="p-6 bg-gray-200 rounded-lg mt-2">
                     <p class="text-gray-600 text-center italic">
                         No accounts to show
+                    </p>
+                </div>
+            @endif
+
+            <h2 class="text-lg text-gray-800 font-semibold leading-tight px-2 mt-6">
+                {{ __('Categories') }}
+            </h2>
+
+            @if ($categories->count())
+                <div class="flex flex-wrap -mx-4">
+                    @foreach ($categories as $category)
+                        <div class="p-4 w-full md:w-1/2 lg:w-1/3 -mt-2">
+                            <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg sm:rounded-lg transition transform hover:scale-105">
+                                <div class="px-6 py-4 bg-white border-l-8 border-b border-gray-200" style="border-left-color: {{ $category->color }}">
+
+                                    <div class="font-semibold text-gray-900">
+                                        {{ $category->name }}
+                                    </div>
+
+                                    <div class="text-2xl text-right mt-2">
+                                        {{ money($category->transactions_sum_amount ?? 0) }}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <div class="p-6 bg-gray-200 rounded-lg mt-2">
+                    <p class="text-gray-600 text-center italic">
+                        No categories to show
                     </p>
                 </div>
             @endif

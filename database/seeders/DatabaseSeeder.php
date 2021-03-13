@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Account;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -17,6 +18,7 @@ class DatabaseSeeder extends Seeder
     {
         User::factory()
             ->has(Account::factory()->count(3))
+            ->has(Category::factory()->count(3))
             ->create([
                 'name' => 'Test User',
                 'email' => 'test@user.com',
