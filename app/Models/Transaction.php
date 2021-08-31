@@ -15,4 +15,9 @@ class Transaction extends Model
     protected $casts = [
         'amount' => Money::class,
     ];
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
 }
