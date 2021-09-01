@@ -8,11 +8,11 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
-                </div>
-            </div>
+            @if (session()->has('message'))
+                <x-message :type="session('message')['level']">
+                    {{ session('message')['message'] }}
+                </x-message>
+            @endif
 
             <div class="flex items-center space-x-5 px-2 mt-6">
 
@@ -20,7 +20,10 @@
                     {{ __('Accounts') }}
                 </h2>
 
-                <a href="#" class="flex items-center space-x-1 text-gray-500 hover:text-gray-800 transition">
+                <a
+                    href="{{ route('accounts.create') }}"
+                    class="flex items-center space-x-1 text-gray-500 hover:text-gray-800 transition"
+                >
 
                     <x-heroicon-o-plus-circle class="w-4 h-4"/>
 

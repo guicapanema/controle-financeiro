@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Livewire\Accounts\Create as AccountCreate;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', DashboardController::class)
-    ->middleware(['auth'])
-    ->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', DashboardController::class)
+        ->name('dashboard');
+
+    Route::get('/accounts/create', AccountCreate::class)
+        ->name('accounts.create');
+});
 
 require __DIR__.'/auth.php';
