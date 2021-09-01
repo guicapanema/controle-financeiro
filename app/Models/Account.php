@@ -11,8 +11,13 @@ class Account extends Model
 {
     use BelongsToUser, HasFactory;
 
-    protected $guarded = ['id'];
+    const TYPES = [
+        'CHECKING',
+        'SAVINGS',
+        'CREDITCARD',
+    ];
 
+    protected $guarded = ['id'];
 
     public function transactions()
     {
