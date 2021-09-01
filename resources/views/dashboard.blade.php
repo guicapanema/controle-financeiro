@@ -9,12 +9,12 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
             @if (session()->has('message'))
-                <x-message :type="session('message')['level']">
+                <x-message :type="session('message')['level']" class="mb-6">
                     {{ session('message')['message'] }}
                 </x-message>
             @endif
 
-            <div class="flex items-center space-x-5 px-2 mt-6">
+            <div class="flex items-center space-x-5 px-2">
 
                 <h2 class="text-lg text-gray-800 font-semibold leading-tight">
                     {{ __('Accounts') }}
